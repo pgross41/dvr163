@@ -14,7 +14,7 @@ class HomeController extends BaseController {
         $this->body = "<h4>$this->host - $this->cam_count streams</h4>";
         
         $i = -1;
-        while($i++ < $this->cam_count){
+        while(++$i < $this->cam_count){
             $this->body .= $this->get_img_tag($i);
         }
 
