@@ -1,0 +1,10 @@
+{
+    "require":{
+        "phroute/phroute": "2.1",
+        "nategood/httpful": "0.2.20",
+        "vlucas/phpdotenv": "2.5.1"
+    },
+    "autoload": {
+        "psr-4": { "": "src" }
+    }
+}
