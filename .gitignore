@@ -1,3 +1,4 @@
 /root/var/www/vendor/
 /root/var/www/node_modules
+/root/var/www/public/node_modules
 .env
