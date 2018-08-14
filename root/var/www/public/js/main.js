@@ -8,7 +8,7 @@ require.config({
         views: '../js/views',
         html: '../html',
         text: 'requirejs-text',
-        jquery: 'jquery/jquery', // Thinks it's global
+        jquery: 'jquery/dist/jquery', // Thinks it's global
         underscore: 'underscore/underscore', // Thinks it's global
     },
     shim : {
