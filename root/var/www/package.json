@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "postinstall": "cd public && npm install --unsafe-perm"
+        "postinstall": "node_modules/getcomposer/composer.phar install && cd public && npm install --unsafe-perm"
     },
     "dependencies": {
         "getcomposer": "1.3.3"

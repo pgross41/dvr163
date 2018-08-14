@@ -13,7 +13,6 @@ class Router {
     
     public function route(){
         
-        
         // Catch-all route for home controller
         $this->router->any('/{anything:(?!api).*}?', ['App\Controllers\HomeController', 'show']);
         

@@ -11,12 +11,11 @@ class HomeController extends BaseController {
     
     public function show(){
 
-        $this->body = "<h4>$this->host - $this->cam_count streams</h4>";
-        
-        $i = -1;
-        while(++$i < $this->cam_count){
-            $this->body .= $this->get_img_tag($i);
-        }
+        $this->lds_ring = file_get_contents('html/lds-ring.html');
+        // $i = -1;
+        // while(++$i < $this->cam_count){
+        //     $this->body .= $this->get_img_tag($i);
+        // }
 
         ob_start();
         include(dirname(__FILE__) . '/../../home.php');
