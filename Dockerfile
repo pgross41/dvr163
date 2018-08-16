@@ -14,4 +14,4 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
 
 # Install project dependencies 
 RUN cd /var/www  && \
-    npm install --unsafe-perm
+    npm install

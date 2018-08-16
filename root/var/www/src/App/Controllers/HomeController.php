@@ -5,7 +5,6 @@ namespace App\Controllers;
 class HomeController extends BaseController {
 
     public function __construct(){
-        $this->cam_count = getenv('CAM_COUNT');
         $this->host = getenv('HOST');
     }
     
@@ -14,7 +13,7 @@ class HomeController extends BaseController {
         $this->lds_ring = file_get_contents('html/lds-ring.html');
         // $i = -1;
         // while(++$i < $this->cam_count){
-        //     $this->body .= $this->get_img_tag($i);
+        //     $this->lds_ring .= $this->get_img_tag($i);
         // }
 
         ob_start();

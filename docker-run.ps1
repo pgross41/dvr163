@@ -1,4 +1,6 @@
+docker stop dvr163
 docker run `
+  -d `
   --rm `
   --name=dvr163 `
   -v "$($pwd.path)\root\var\www:/var/www" `

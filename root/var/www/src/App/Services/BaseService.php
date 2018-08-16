@@ -1,18 +1,13 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Services;
 
-class BaseController {
+class BaseService {
     
     public function __construct(){
-
-        // Config
         $this->host = getenv('HOST');
         $this->username = getenv('USERNAME');
         $this->password = getenv('PASSWORD');
-
-        // Services
-        $this->nvr_service = new \App\Services\NvrService();
     }
     
 }

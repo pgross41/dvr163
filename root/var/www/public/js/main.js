@@ -22,7 +22,6 @@ require.config({
 
 define(function (require) {
 
-    window._ = require('underscore');
     var App = require('views/app');
     var app = new App();
     // $('#page-loading').remove();

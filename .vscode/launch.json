@@ -14,7 +14,8 @@
             },
             "xdebugSettings": {
                 "max_children": 10000,
-                "max_data": 10000
+                "max_data": 10000,
+                "max_depth": 100
             }
         }
     ]
