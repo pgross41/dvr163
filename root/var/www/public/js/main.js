@@ -24,7 +24,5 @@ define(function (require) {
 
     var App = require('views/app');
     var app = new App();
-    // $('#page-loading').remove();
-    // $('body').append(app.render().el);
 
 })

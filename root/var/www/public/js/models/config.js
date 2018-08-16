@@ -6,17 +6,16 @@ define(function(require) {
     
     return BaseModel.extend({
         
-        urlRoot: 'gw',
+        urlRoot: 'config',
         
         initialize: function() {
             
         },
         
         defaults: {
-            function_name: null,
-            notes: null,
-            ticket_number: null,
-            multiplier: 1
+            cam_count: null,
+            cam_names: [],
+            sensor_count: null
         },
         
         /********************************/

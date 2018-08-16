@@ -20,14 +20,8 @@
 <div id="page-loading">
     <?=$this->lds_ring?>
     <div id="page-loading-message">
-        Initializing...
+        Loading config...
     </div>
-    <ul>
-        TODO:
-        <li>Get server config</li>
-        <li>Run devinfo for camcnt</li>
-        <li>Render</li>
-    </ul>
 </div>
 
 </body>

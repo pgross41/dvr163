@@ -3,7 +3,9 @@ define(function(require){
     var AppRouter = require('routers/app-router');
     var Backbone = require('app/backbone-base');
     var BaseView = require('views/view-base');
-    var GwDevinfo = require('models/gw-devinfo');
+    var camPanelTemplate = require ('text!html/cam-panel.tpl');
+    var Config = require('models/config');
+    var Mustache = require('Mustache');
     
     /********************************/
     
@@ -19,8 +21,7 @@ define(function(require){
             BaseView.app = this;
             
             // Models
-            this.devinfo = new GwDevinfo();
-            this.devinfo.fetch();
+            this.config = new Config();
             
             // Views
             // this.timelinePanel = new TimelinePanelView();
@@ -29,6 +30,12 @@ define(function(require){
             // Router
             this.router = new AppRouter(this);
             
+            // Events
+            this.listenTo(this.config, 'sync', this.configSync);
+            
+            // Get config so we can render
+            this.config.fetch();
+            
         },
         
         events: {
@@ -36,7 +43,14 @@ define(function(require){
         
         render: function(){
             
-            this.$el.append('heyyyyyyyy from app.js');
+            for (var i = 0; i < this.config.get('cam_count'); i++) {
+                var html = Mustache.render(camPanelTemplate, {
+                    name: this.config.get('cam_names')[i],
+                    channel_number: i
+                });
+                this.$el.append(html);
+            }
+            
             // this.$el.append(this.timelinePanel.render().el);
             // this.$el.append(this.timelineTools.render().el);
             
@@ -63,6 +77,12 @@ define(function(require){
                 // });
             }
         },
+        
+        // Render the app
+        configSync: function(e){
+            $('#page-loading').remove();
+            $('body').append(this.render().el);
+        }
         
     });
     
