@@ -50,3 +50,50 @@ body{
         transform: rotate(360deg);
     }
 }
+
+#cam-views{
+    margin-top: 48px;
+}
+
+.navbar{
+    border-bottom: 2px solid #aaa;
+}
+
+.cam-view {
+    float: left;
+    margin: 10px 5px 0;
+    border: 2px solid #aaa;
+    border-radius: 5px;
+    zoom: 1;
+}
+
+.cam-header{
+    padding: 5px 8px;
+}
+
+.cam-stream{
+    width: 640px;
+    height: 360px;
+    border-radius: 0 0 5px 5px;
+    text-align: center;
+    background-color: #555;
+}
+
+.cam-stream img{
+    -webkit-user-select: none;
+    background-color: #555;
+    cursor: pointer;
+}
+
+.cam-action-icons{
+    text-align: right;
+}
+
+.cam-loading-icon{
+    padding: 145px 0;
+}
+
+.cam-action-icons i{
+    padding: 8px 5px;
+    cursor: pointer;
+}

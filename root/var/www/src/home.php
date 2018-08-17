@@ -5,13 +5,17 @@
 
 <meta charset="utf-8">
 
-<title>NVR Viewer</title>
+<title>Stream NVR</title>
 
 <script data-main="js/main.js" src="node_modules/requirejs/require.js"></script>
 
+<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/styles.css">
 
 <link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
@@ -19,9 +23,6 @@
 
 <div id="page-loading">
     <?=$this->lds_ring?>
-    <div id="page-loading-message">
-        Loading config...
-    </div>
 </div>
 
 </body>

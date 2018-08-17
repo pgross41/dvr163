@@ -10,9 +10,10 @@ require.config({
         text: 'requirejs-text',
         jquery: 'jquery/dist/jquery', // Thinks it's global
         underscore: 'underscore/underscore', // Thinks it's global
+        bootstrap: 'bootstrap/dist/js/bootstrap.bundle.min'
     },
     shim : {
-        // bootstrap: ['jquery']
+        bootstrap: ['jquery']
     },
     map: {
         // '*': { 'jquery': 'asu/jquery-private' },
@@ -20,8 +21,10 @@ require.config({
     }
 });
 
+
 define(function (require) {
 
+    require('bootstrap');
     var App = require('views/app');
     var app = new App();
 

@@ -3,9 +3,9 @@ define(function(require){
     var AppRouter = require('routers/app-router');
     var Backbone = require('app/backbone-base');
     var BaseView = require('views/view-base');
-    var camPanelTemplate = require ('text!html/cam-panel.tpl');
+    var CamPanel = require ('views/cam-panel');
     var Config = require('models/config');
-    var Mustache = require('Mustache');
+    var MainMenu = require ('views/main-menu');
     
     /********************************/
     
@@ -22,10 +22,10 @@ define(function(require){
             
             // Models
             this.config = new Config();
-            
+
             // Views
-            // this.timelinePanel = new TimelinePanelView();
-            // this.timelineTools = new TimelineToolsView();
+            this.mainMenu = new MainMenu();
+            this.camPanel = new CamPanel();
             
             // Router
             this.router = new AppRouter(this);
@@ -43,16 +43,8 @@ define(function(require){
         
         render: function(){
             
-            for (var i = 0; i < this.config.get('cam_count'); i++) {
-                var html = Mustache.render(camPanelTemplate, {
-                    name: this.config.get('cam_names')[i],
-                    channel_number: i
-                });
-                this.$el.append(html);
-            }
-            
-            // this.$el.append(this.timelinePanel.render().el);
-            // this.$el.append(this.timelineTools.render().el);
+            this.$el.append(this.mainMenu.render().el);
+            this.$el.append(this.camPanel.render().el);
             
             return this;
             

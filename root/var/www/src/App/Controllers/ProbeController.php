@@ -8,11 +8,12 @@ namespace App\Controllers;
 
 class ProbeController extends BaseController {
     
-    const START = 'a';
-    const END = 'zz';
+    const START = 'sp';
+    const END = 'sp';
     
     public function __construct() {
         
+        parent::__construct();
         $string = self::START;
         $this->strings = [];
         while ($string < self::END) {
@@ -44,6 +45,11 @@ class ProbeController extends BaseController {
         
         $response = $this->get($url);
 
+        echo('<pre>');
+        echo "$url\n";
+        print_r($response);
+        die(); // TESTING TESTING TESTING TESTING TESTING 
+
         if($response->code == 404){
             return;
         }
@@ -55,7 +61,7 @@ class ProbeController extends BaseController {
     private function get($url){
         
         try{
-            $response = \Httpful\Request::get($url)->timeout(2)->send();
+            $response = \Httpful\Request::get($url)->send();
         } catch(\Exception $e) {
             return (object)['code' => $e->getMessage()];
         }
