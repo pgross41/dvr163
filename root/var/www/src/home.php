@@ -5,7 +5,7 @@
 
 <meta charset="utf-8">
 
-<title>Stream NVR</title>
+<title>Network Video</title>
 
 <script data-main="js/main.js" src="node_modules/requirejs/require.js"></script>
 
