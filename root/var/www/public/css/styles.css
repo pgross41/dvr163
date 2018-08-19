@@ -65,11 +65,11 @@ body{
     margin: 10px 5px 0;
     border: 2px solid #aaa;
     border-radius: 5px;
-    zoom: 1;
 }
 
 .cam-header{
     padding: 5px 8px;
+    white-space: nowrap;
 }
 
 .cam-stream{
@@ -78,6 +78,7 @@ body{
     border-radius: 0 0 5px 5px;
     text-align: center;
     background-color: #555;
+    margin: auto;
 }
 
 .cam-stream img{

@@ -36,9 +36,11 @@ define(function(require){
         },
         
         /********************************/
-
+        
         zoomOut: function(){
-            this.setZoom(this.getZoom() - 0.1);
+            if(this.getZoom() > 0.1){
+                this.setZoom(this.getZoom() - 0.1);
+            }
         }, 
         
         zoomIn: function(){
@@ -48,11 +50,11 @@ define(function(require){
         zoomReset: function(){
             this.setZoom(1);
         },
-
+        
         getZoom: function(){
             return parseFloat(this.app.$('.cam-stream').css('zoom'));
         },
-
+        
         setZoom: function(value){
             this.app.$('.cam-stream').css('zoom', value);
         }
