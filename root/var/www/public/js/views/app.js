@@ -17,12 +17,14 @@ define(function(require){
         
         initialize: function(){
             
+            var self = this; 
+            
             // So everyone can get to it
             BaseView.app = this;
             
             // Models
             this.config = new Config();
-
+            
             // Views
             this.mainMenu = new MainMenu();
             this.camPanel = new CamPanel();
@@ -36,6 +38,14 @@ define(function(require){
             // Get config so we can render
             this.config.fetch();
             
+            // Auto-zoom for phone screens
+            window.addEventListener("orientationchange", function() {
+                setTimeout( function(){
+                    self.mainMenu.setZoom(1);
+                    self.autoZoom();
+                }, 1000);
+            }, false);
+            
         },
         
         events: {
@@ -45,7 +55,6 @@ define(function(require){
             
             this.$el.append(this.mainMenu.render().el);
             this.$el.append(this.camPanel.render().el);
-            
             return this;
             
         },
@@ -74,6 +83,18 @@ define(function(require){
         configSync: function(e){
             $('#page-loading').remove();
             $('body').append(this.render().el);
+            this.autoZoom();
+        },
+        
+        autoZoom: function(){
+            
+            var windowWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            var camViewWidth = this.$('.cam-view').first().outerWidth();
+            if(camViewWidth > windowWidth){
+                this.mainMenu.zoomOut();
+                this.autoZoom();
+            }
+            
         }
         
     });

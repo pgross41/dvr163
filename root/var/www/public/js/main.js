@@ -25,6 +25,7 @@ require.config({
 define(function (require) {
 
     require('bootstrap');
+    require('screenfull');
     var App = require('views/app');
     var app = new App();
 

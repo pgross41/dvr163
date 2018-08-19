@@ -12,6 +12,7 @@ define(function(require){
         
         tagName: 'div',
         id: 'cam-panel',
+        className: 'row',
         
         initialize: function(channel_number){
             

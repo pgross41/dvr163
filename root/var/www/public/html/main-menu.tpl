@@ -1,7 +1,7 @@
-<nav class="navbar fixed-top navbar-dark bg-dark">
+<nav class="navbar navbar-dark fixed-top bg-dark col-12">
     <div class="btn-group">
         <button class="btn btn-sm btn-outline-secondary active" type="button">Live</button>
-        <button class="btn btn-sm btn-outline-secondary" type="button" disabled title="Not yet implemented">Recorded</button>
+        <!-- <button class="btn btn-sm btn-outline-secondary" type="button">Recorded</button> -->
     </div>
     <div class="pull-right">
         <button id="zoom-out-button" class="btn btn-sm btn-outline-secondary" type="button">

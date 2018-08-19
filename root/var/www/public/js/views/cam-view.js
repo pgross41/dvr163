@@ -27,6 +27,7 @@ define(function(require){
             'click img': 'play',
             'click .cam-pause': 'pause',
             'click .cam-save': 'save',
+            'click .cam-fullscreen': 'fullscreen',
         },
         
         render: function(){
@@ -88,6 +89,12 @@ define(function(require){
             .appendTo("body");
             a[0].click();
             a.remove();
+        },
+
+        fullscreen: function(){
+            if (screenfull.enabled) {
+                screenfull.request(this.$('img')[0]);
+            }
         }
         
     });

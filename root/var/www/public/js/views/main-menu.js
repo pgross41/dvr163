@@ -11,6 +11,7 @@ define(function(require){
         
         tagName: 'div',
         id: 'main-menu',
+        className: 'row',
         
         initialize: function(channel_number){
             
@@ -49,11 +50,11 @@ define(function(require){
         },
 
         getZoom: function(){
-            return parseFloat(this.app.$('.cam-view').css('zoom'));
+            return parseFloat(this.app.$('.cam-stream').css('zoom'));
         },
 
         setZoom: function(value){
-            this.app.$('.cam-view').css('zoom', value);
+            this.app.$('.cam-stream').css('zoom', value);
         }
         
     });

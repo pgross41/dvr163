@@ -1,18 +1,18 @@
 <div class="cam-header bg-dark">
     <div class="row">
-        <div class="col-8">
+        <div class="col-7">
             <span class="h3">{{name}}</span>
         </div>
-        <div class="col-4 cam-action-icons">
+        <div class="col-5 cam-action-icons">
             <span class="cam-pause">
                 <i class="fa fa-lg fa-pause-circle"></i>
             </span>
             <span class="cam-save">
                 <i class="fa fa-lg fa-image"></i>
             </span>
-            <!-- <span class="cam-fullscreen">
+            <span class="cam-fullscreen">
                 <i class="fa fa-lg fa-arrows-alt"></i>
-            </span> -->
+            </span>
         </div>
     </div>
 </div>

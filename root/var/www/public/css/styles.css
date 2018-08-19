@@ -51,8 +51,9 @@ body{
     }
 }
 
-#cam-views{
+#cam-panel{
     margin-top: 48px;
+    overflow-x: auto;
 }
 
 .navbar{
