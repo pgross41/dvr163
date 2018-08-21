@@ -3,7 +3,7 @@ define(function(require){
     var Backbone = require('app/backbone-base');
     var BaseView = require('views/view-base');
     var template = require ('text!html/main-menu.tpl');
-    var Mustache = require('Mustache');
+    var Mustache = require('mustache');
     
     /********************************/
     

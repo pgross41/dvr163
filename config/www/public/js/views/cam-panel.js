@@ -2,7 +2,7 @@ define(function(require){
     
     var Backbone = require('app/backbone-base');
     var BaseView = require('views/view-base');
-    var Mustache = require('Mustache');
+    var Mustache = require('mustache');
     var SingleCamView = require ('views/cam-view');
     var template = require ('text!html/cam-panel.tpl');
     

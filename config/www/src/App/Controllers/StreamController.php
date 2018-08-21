@@ -17,7 +17,7 @@ class StreamController extends BaseController {
         // set no time limit and disable compression:
         set_time_limit(0);
         @ini_set('zlib.output_compression', 0);
-        
+
         // Get the stream handle
         try {
             $fp = $this->nvr_service->get_mjpeg_stream($channel_number);
@@ -42,7 +42,7 @@ class StreamController extends BaseController {
     
     // Return error image 
     private function stream_error_image($disconnected=false){
-        $filepath = '/var/www/public/images/camera-' . ($disconnected ? 'disconnected' : 'error') . '.png';
+        $filepath = dirname(__FILE__) . '/../../../public/images/camera-' . ($disconnected ? 'disconnected' : 'error') . '.png';
         $fp = fopen($filepath, 'rb');
         header("Content-Type: image/png");
         header("Content-Length: " . filesize($filepath));

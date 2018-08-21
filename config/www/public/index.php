@@ -8,4 +8,4 @@ $dotenv = new \Dotenv\Dotenv(dirname(__FILE__) . '/..');
 $dotenv->load();
 
 // Route request
-(new App\router())->route(); 
+(new App\Router())->route(); 
