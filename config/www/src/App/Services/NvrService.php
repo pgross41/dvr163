@@ -37,7 +37,43 @@ class NvrService extends BaseService {
     public function get_devinfo(){
         return $this->get_gw('devinfo', ['camcnt', 'sensorcnt', 'httpport']);
     }
+
+    /**
+     *  Use gw to get devinfo 
+     */
+    public function get_envload_screen($channel_number){
+        
+        // Build XML request
+        $juan = new \SimpleXMLElement('<juan ver="0" squ="abcdefg" dir="0" enc="1"><envload type="0" usr="' . $this->username . '" pwd="' . $this->password . '"><screen chn="' . $channel_number . '" title=""/></envload></juan>');
+        $dom = dom_import_simplexml($juan);
+        $xml_string =$dom->ownerDocument->saveXML($dom->ownerDocument->documentElement);
+        $url = $this->get_cgi_url('gw', [
+            'xml' => urlencode($xml_string),
+            '_' => time()]
+        );
+
+        // Send request
+        try{
+            $response = \Httpful\Request::get($url)->send();
+        } catch(\Exception $e) {
+            return (object)['code' => $e->getMessage()];
+        }
+
+        // Parse XML response
+        $data = [];
+        $juan = new \SimpleXMLElement($response->body);
+        foreach($juan->envload->screen->attributes() as $key => $value){
+            $data[$key] = (string) $value;
+        }
+        
+        return $data;
+
+
+    }
     
+    /**
+     * Need to support nested elements (e.g. get_envload_screen)
+     */
     private function get_gw($name, $attrs = []) {
         
         // Build XML request

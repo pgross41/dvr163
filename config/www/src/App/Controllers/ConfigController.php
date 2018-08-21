@@ -9,7 +9,8 @@ class ConfigController extends BaseController {
         $devinfo = $this->nvr_service->get_devinfo();
         $cam_names = [];
         for ($i=0; $i < $devinfo['camcnt']; $i++) { 
-            $cam_names[] = getenv('CAM_' . $i . '_NAME') ?: 'Camera ' . ($i+1);
+            $cam_name = $this->nvr_service->get_envload_screen($i)['title'];
+            $cam_names[] = $cam_name ?: 'Camera ' . ($i+1);
         }
 
         return [ 
