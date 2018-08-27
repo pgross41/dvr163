@@ -2,18 +2,23 @@
 Open-source web interface for Eseenet/dvr163 NVR 
 http://help.dvr163.com/index.php
 
+### Build and run
+```
+sudo docker build -t dvr163 .
+sudo ./docker-run.ps1
+```
+
+### Enable autostart on boot
+```
+sudo ./install-autostart.sh
+```
+
 ### Web root location
 ```
 root/var/www/public
 ```
 
-### Build and run
-```
-docker build -t dvr163 .
-./docker-run.ps1
-```
-
 ### Logs
 ```
-docker logs -f dvr163
+sudo docker logs -f dvr163
 ```
