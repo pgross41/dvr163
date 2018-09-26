@@ -15,7 +15,7 @@ sudo ./install-autostart.sh
 
 ### Web root location
 ```
-root/var/www/public
+/config/www
 ```
 
 ### Logs

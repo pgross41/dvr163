@@ -19,6 +19,7 @@ class Router {
         // API Routes
         $this->router->group(['prefix' => 'api'], function($router){
             $router->any('/config', ['App\Controllers\ConfigController', 'get_config']);
+            $router->any('/snapshot/{channel_number}', ['App\Controllers\SnapshotController', 'get_snapshot']);
             $router->any('/stream/mjpeg/{channel_number}', ['App\Controllers\StreamController', 'stream_mjpeg']);
             $router->any('/probe', ['App\Controllers\ProbeController', 'probe']);
         });

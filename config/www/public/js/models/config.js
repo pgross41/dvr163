@@ -15,7 +15,8 @@ define(function(require) {
         defaults: {
             cam_count: null,
             cam_names: [],
-            sensor_count: null
+            sensor_count: null,
+            root: null
         },
         
         /********************************/

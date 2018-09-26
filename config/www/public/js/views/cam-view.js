@@ -36,6 +36,8 @@ define(function(require){
             
             this.$el.html(Mustache.render(template, this.data));
             this.$camImg = this.$('img');
+
+            this.$('.cam-play').css('background-image', 'url("' + this.app.apiBase + '/snapshot/' + this.data.channel_number + '")');
             
             this.$camImg.bind('load', function(e) {
                 self.$('.cam-loading-icon').hide();

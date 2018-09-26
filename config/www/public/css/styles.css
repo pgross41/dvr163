@@ -56,6 +56,10 @@ body{
     overflow-x: auto;
 }
 
+#cam-views{
+    padding: 0;
+}
+
 .navbar{
     border-bottom: 2px solid #aaa;
 }
@@ -64,7 +68,7 @@ body{
     float: left;
     margin: 10px 5px 0;
     border: 2px solid #aaa;
-    border-radius: 5px;
+    border-radius: 2px;
 }
 
 .cam-header{
