@@ -16,8 +16,7 @@ class ConfigController extends BaseController {
         return [ 
             'cam_count' => $devinfo['camcnt'],
             'cam_names' => $cam_names,
-            'sensor_count' => $devinfo['sensorcnt'],
-            'root' => 'https://' . $_SERVER['HTTP_HOST']
+            'sensor_count' => $devinfo['sensorcnt']
         ];
         
     }

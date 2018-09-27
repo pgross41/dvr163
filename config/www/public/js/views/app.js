@@ -81,7 +81,7 @@ define(function(require){
         
         // Render the app
         configSync: function(e){
-            this.apiBase = this.config.get('root') + '/api';
+            this.apiBase = window.location.protocol + '//' + window.location.hostname + '/api';
             $('#page-loading').remove();
             $('body').append(this.render().el);
             this.autoZoom();
