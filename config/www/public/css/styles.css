@@ -90,6 +90,9 @@ body{
     -webkit-user-select: none;
     background-color: #555;
     cursor: pointer;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 50%;
 }
 
 .cam-action-icons{
