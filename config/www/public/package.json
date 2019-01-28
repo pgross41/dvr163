@@ -13,7 +13,6 @@
         "popper.js": "1.14.3",
         "requirejs": "2.3.5",
         "requirejs-text": "2.0.15",
-        "screenfull": "3.3.2",
         "underscore": "1.9.1"
     }
 }

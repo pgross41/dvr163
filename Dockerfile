@@ -13,5 +13,5 @@ RUN apk add --no-cache bind-tools && \
 RUN apk add --update nodejs nodejs-npm
 
 # Install project dependencies 
-RUN cd /config/www && \
-    npm install --unsafe-perm
+# RUN cd /config/www && \
+#     npm install --unsafe-perm

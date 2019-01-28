@@ -94,9 +94,7 @@ define(function(require){
         },
 
         fullscreen: function(){
-            if (screenfull.enabled) {
-                screenfull.request(this.$('img')[0]);
-            }
+            this.$('img')[0].requestFullscreen()
         }
         
     });
