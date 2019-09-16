@@ -4,7 +4,9 @@
   "description": "Open-source web interface for Eseenet/dvr163 NVR \r http://help.dvr163.com/index.php",
   "main": "dist/index.js",
   "scripts": {
-    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "buildclient": "cd client && npm run build",
+    "lint": "tslint -c tslint.json -p tsconfig.json --fix",
+    "prebuild": "npm run lint && npm run buildclient",
     "build": "tsc",
     "prestart": "npm run build",
     "start": "node ./dist/server.js",
