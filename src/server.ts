@@ -1,11 +1,11 @@
 // tslint:disable:no-console
 import express from "express";
 import path from "path";
+import config from "./config";
 import configController from "./controllers/configController";
 import snapshotController from "./controllers/snapshotController";
 import streamMjpegController from "./controllers/streamMjpegController";
 
-const port = process.env.PORT || 5000;
 const app = express();
 const api = express.Router();
 
@@ -22,4 +22,4 @@ api.use("/stream/mjpeg/:channelNumber", streamMjpegController);
 app.use("/api", api);
 
 // Listen for requests
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(config.port, () => console.log(`Listening on port ${config.port}`));

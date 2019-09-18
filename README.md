@@ -2,6 +2,10 @@
 Open-source web interface for Eseenet/dvr163 NVR 
 http://help.dvr163.com/index.php
 
+The NVR comes stock with a built-in web server for viewing the camera feeds but it is Flash based and thus not mobile friendly. This provides a mobile-friendly means for accessing the cameras. Note: There is no known documentation for the NVR's API so the routes and args (consumed in nvrService.ts) have all been discovered using the Network tab in devtools. 
+
+https://community.home-assistant.io/t/support-for-security-camera-system-via-nvr-eseecloud-dvr163/
+
 ## Docker
 
 ### Build and run
