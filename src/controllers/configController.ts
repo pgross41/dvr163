@@ -1,5 +1,6 @@
 import express = require('express');
+import nvrService from '../services/nvrService';
 
-export default (req: express.Request, res: express.Response) => {
-  res.send({ testValue: 'config' });
+export default async (req: express.Request, res: express.Response) => {
+  res.send(await nvrService.getDevinfo());
 };
