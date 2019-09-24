@@ -7,11 +7,11 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
-import styles from './CamView.module.css';
+import styles from './LiveCams.module.css';
 
 const cards = [1, 2, 3, 4];
 
-export default function CamView() {
+export default function LiveCams() {
   return (
     <main>
       <Container className={styles.cardGrid} maxWidth="xl">

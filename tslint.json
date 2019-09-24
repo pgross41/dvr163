@@ -11,6 +11,11 @@
     "interface-name": [
       true,
       "never-prefix"
+    ],
+    "quotemark": [
+      true,
+      "single",
+      "jsx-double"
     ]
   },
   "rulesDirectory": []
