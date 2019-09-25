@@ -8,37 +8,41 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import styles from './LiveCams.module.css';
+import Pause from '@material-ui/icons/Pause';
+import PlayArrow from '@material-ui/icons/PlayArrow';
+import SystemUpdateAltIcon from '@material-ui/icons/SystemUpdateAlt';
 
-const cards = [1, 2, 3, 4];
+const cams = [{ title: 'Living Room' }, { title: 'Garage' }, { title: 'Basement' }, { title: 'Front Porch' }];
 
-export default function LiveCams() {
+interface Props {}
+
+export default function LiveCams(props: Props) {
   return (
     <main>
       <Container className={styles.cardGrid} maxWidth="xl">
         <Grid container spacing={2}>
-          {cards.map(card => (
-            <Grid item key={card} sm={12} md={6}>
+          {cams.map((cam, idx) => (
+            <Grid item key={idx} sm={12} md={6}>
               <Card className={styles.card}>
-                <CardMedia
-                  className={styles.cardMedia}
-                  image="https://source.unsplash.com/random"
-                  title="Image title"
-                />
                 <CardContent className={styles.cardContent}>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    Heading
-                  </Typography>
-                  <Typography>
-                    This is a media card. You can use this section to describe the content.
+                  <Typography variant="h5" component="h2">
+                    {cam.title}
                   </Typography>
                 </CardContent>
+                <CardMedia
+                  className={styles.cardMedia}
+                  image="https://source.unsplash.com/random/"
+                  title="Image title"
+                />
                 <CardActions>
-                  <Button size="small" color="primary">
-                    View
+                  <Button variant="contained" size="small" color="primary">
+                    {Math.random() >= 0.5 ? <Pause /> : <PlayArrow />}
                   </Button>
-                  <Button size="small" color="primary">
-                    Edit
-                  </Button>
+                  <Grid container justify="flex-end">
+                    <Button size="small" color="default" title="Save Screenshot">
+                      <SystemUpdateAltIcon />
+                    </Button>
+                  </Grid>
                 </CardActions>
               </Card>
             </Grid>
