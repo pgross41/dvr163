@@ -1,6 +1,6 @@
 import express = require('express');
 import { error, log } from '../dbgConsole';
-import nvrService from '../services/nvrService';
+import nvrService from '../nvr/nvrService';
 
 export default (req: express.Request, res: express.Response) => {
   const channelNumber = parseInt(req.params.channelNumber, 10);
