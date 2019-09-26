@@ -2,9 +2,9 @@
 import express from 'express';
 import path from 'path';
 import config from './config';
-import configController from './controllers/configController';
-import snapshotController from './controllers/snapshotController';
-import streamMjpegController from './controllers/streamMjpegController';
+import configController from './handlers/configHandler';
+import snapshotController from './handlers/snapshotHandler';
+import streamMjpegController from './handlers/streamMjpegHandler';
 
 const app = express();
 const api = express.Router();
