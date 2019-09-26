@@ -1,5 +1,7 @@
+import request from 'request-promise-native';
 import { GwDevinfoAttrs, GwEnvloadScreenAttrs } from './Gw';
 import nvrClient from './nvrClient';
+import Path from './Path';
 
 /**
  * Helper methods for using the convoluted nvrClient
@@ -9,7 +11,16 @@ class NvrService {
    * Return a handle to the mjpeg stream
    */
   public getMjpegStream(channelNumber: number) {
-    return nvrClient.getMjpegStream(channelNumber);
+    const mjpegUrl = nvrClient.getCgiUrl(Path.sp, { chn: channelNumber, q: 0 });
+    return request(mjpegUrl);
+  }
+
+  /**
+   * Return a handle to a snapshot image
+   */
+  public getSnapshot(channelNumber: number): any {
+    const snapshotUrl = nvrClient.getCgiUrl(Path.snapshot, { chn: channelNumber, q: 0 });
+    return request(snapshotUrl);
   }
 
   /**

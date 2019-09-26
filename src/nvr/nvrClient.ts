@@ -10,14 +10,19 @@ import { GwParams, Params, UrlParams } from './UrlParams';
  */
 class NvrClient {
   /**
-   * Return a handle to the mjpeg stream
+   * Build the URL for all requests
    */
-  public getMjpegStream(channelNumber: number) {
-    const mjpegUrl = this.getCgiUrl(Path.sp, {
-      chn: channelNumber,
-      q: 0,
-    });
-    return request(mjpegUrl);
+  public getCgiUrl(path: Path, params: UrlParams = {}) {
+    const allParams = {
+      ...params,
+      p: config.nvrPassword,
+      rand: Math.round(Math.random() * 10000),
+      u: config.nvrUsername,
+    } as Params;
+    const paramString = Object.keys(allParams)
+      .map((key) => `${key}=${allParams[key]}`)
+      .join('&');
+    return `${config.nvrHost}/cgi-bin/${Path[path]}.cgi?${paramString}`;
   }
 
   /**
@@ -90,22 +95,6 @@ class NvrClient {
     // Parse XML response
     const response: Gw = xmlJs.xml2js(xmlResponse, { compact: true }) as Gw;
     return response.juan;
-  }
-
-  /**
-   * Build the URL for all requests
-   */
-  private getCgiUrl(path: Path, params: UrlParams = {}) {
-    const allParams = {
-      ...params,
-      p: config.nvrPassword,
-      rand: Math.round(Math.random() * 10000),
-      u: config.nvrUsername,
-    } as Params;
-    const paramString = Object.keys(allParams)
-      .map((key) => `${key}=${allParams[key]}`)
-      .join('&');
-    return `${config.nvrHost}/cgi-bin/${Path[path]}.cgi?${paramString}`;
   }
 }
 

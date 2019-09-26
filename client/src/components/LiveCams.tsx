@@ -6,11 +6,11 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import React from 'react';
-import styles from './LiveCams.module.css';
 import Pause from '@material-ui/icons/Pause';
 import PlayArrow from '@material-ui/icons/PlayArrow';
 import SystemUpdateAltIcon from '@material-ui/icons/SystemUpdateAlt';
+import React from 'react';
+import styles from './LiveCams.module.css';
 
 const cams = [{ title: 'Living Room' }, { title: 'Garage' }, { title: 'Basement' }, { title: 'Front Porch' }];
 

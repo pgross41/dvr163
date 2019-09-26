@@ -16,7 +16,7 @@ import LiveCams from './LiveCams';
 enum View {
   'cams',
   'snapshots',
-  'player'
+  'player',
 }
 
 export default function Content() {
@@ -64,10 +64,7 @@ export default function Content() {
         </Toolbar>
       </AppBar>
       <main>
-        <Box pt={10}>
-          {routeResult || 'Not found'}
-          {/* {activeView === View.cams && <LiveCams />} */}
-        </Box>
+        <Box pt={10}>{routeResult || 'Not found'}</Box>
       </main>
     </>
   );
