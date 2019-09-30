@@ -4,11 +4,6 @@
     flex-direction: column;
 }
 
-.cardMedia {
-    /* 16:9 */
-    padding-top: 56.25%;
-}
-
 .cardContent {
     flex-grow: 1,
 }

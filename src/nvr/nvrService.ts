@@ -4,7 +4,7 @@ import nvrClient from './nvrClient';
 import Path from './Path';
 
 /**
- * Helper methods for using the convoluted nvrClient
+ * Business logic for consuming the convoluted nvrClient
  */
 class NvrService {
   /**

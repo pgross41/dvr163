@@ -1,7 +1,6 @@
 /**
  * Known valid paths on the NVR's API
  */
-
 enum Path {
   /**
    * Retrieves NVR configuration data, uses a complex XML request/response

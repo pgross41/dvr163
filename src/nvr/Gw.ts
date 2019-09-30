@@ -4,11 +4,11 @@
 
 export interface Gw {
   juan: {
-    devinfo: {
+    devinfo?: {
       _attributes: GwDevinfoAttrs;
     };
-    envload: {
-      screen: {
+    envload?: {
+      screen?: {
         _attributes: GwEnvloadScreenAttrs;
       };
     };

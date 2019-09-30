@@ -10,8 +10,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
 import { useRedirect, useRoutes } from 'hookrouter';
 import React from 'react';
+import LiveCams from './cams/LiveCams';
 import styles from './Content.module.css';
-import LiveCams from './LiveCams';
 
 enum View {
   'cams',

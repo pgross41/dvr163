@@ -1,5 +1,5 @@
 /**
- * Use console only if in debug mode
+ * Write to console only if in debug mode
  */
 
 const dbgConsole = (type: keyof Console = 'log', ...messages: any[]) => {
