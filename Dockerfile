@@ -1,16 +1,24 @@
+###################################################################################################
+# TODO: 
+# - use --only=production flag on npm ci to minimize what needs to be built
+# - Only copy package-*.json files before running npm ci then copy the rest
+###################################################################################################
+
 # Use Node v10 base image
 FROM node:10
 
 # Create app directory
 WORKDIR /usr/src/app
 
-# Copy app dependencies only
-# This takes advantage of cached Docker layers
-COPY package*.json ./
-RUN npm ci --only=production
-
-# Install the rest of the source code
+# Copy source code to image
 COPY . .
 
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+# Install dependencies
+RUN npm ci
+RUN cd client && npm ci
+
+# Build the application
+RUN npm run build
+
+# Start the server
+CMD [ "node", "dist/server.js" ]
